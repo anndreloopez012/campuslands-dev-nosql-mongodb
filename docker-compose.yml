@@ -1,0 +1,13 @@
+services:
+  campuslands-package:
+    build:
+      context: .
+      dockerfile: Dockerfile.package
+      args:
+        REPOSITORY_NAME: campuslands-dev-nosql-mongodb
+        REPOSITORY_URL: https://github.com/anndreloopez012/campuslands-dev-nosql-mongodb
+    image: ghcr.io/anndreloopez012/campuslands-dev-nosql-mongodb:local
+    container_name: campuslands-dev-nosql-mongodb-docs
+    ports:
+      - "8080:80"
+    restart: unless-stopped
