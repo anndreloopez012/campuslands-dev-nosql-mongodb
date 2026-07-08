@@ -1,6 +1,6 @@
 # Docker Packages
 
-Este repositorio publica una imagen Docker en GitHub Container Registry para que estudiantes y maestros puedan consultar el contenido localmente sin configurar un servidor manual.
+Este repositorio publica una imagen Docker en GitHub Container Registry y tambien incluye un entorno local completo para practicar con MongoDB.
 
 ## Imagen publicada
 
@@ -15,28 +15,21 @@ Luego abre:
 http://localhost:8080
 ```
 
-## Construir localmente desde el repositorio
+## Entorno completo con MongoDB
+
+Para levantar documentacion, MongoDB y Mongo Express:
 
 ```bash
-docker compose up -d --build
+docker compose up -d
 ```
 
-Para detenerlo:
+Servicios principales:
 
-```bash
-docker compose down
-```
+- Documentacion: `http://localhost:8080`
+- MongoDB: `localhost:27017`
+- Mongo Express: `http://localhost:8081`
 
-## Si el puerto 8080 esta ocupado
-
-Edita `docker-compose.yml` y cambia el lado izquierdo del puerto. Ejemplo:
-
-```yaml
-ports:
-  - "8090:80"
-```
-
-Despues abre `http://localhost:8090`.
+Consulta la guia completa en `docs/MONGODB-DOCKER.md`.
 
 ## Publicacion automatica
 
@@ -44,11 +37,10 @@ El workflow `.github/workflows/publish-docker-package.yml` publica la imagen cua
 
 - `dev` publica la etiqueta `ghcr.io/anndreloopez012/campuslands-dev-nosql-mongodb:dev`.
 - `main` publica la etiqueta `ghcr.io/anndreloopez012/campuslands-dev-nosql-mongodb:latest`.
-- Cada ejecucion tambien publica una etiqueta por SHA del commit.
 
 ## Uso recomendado
 
 - Los estudiantes siguen entregando ejercicios por PR hacia `dev`.
 - Los maestros revisan y mezclan a `dev`.
 - GitHub Actions actualiza la imagen Docker de consulta.
-- Para produccion, se conserva `main` como rama estable.
+- Docker Compose levanta la base local para practicar consultas reales.
