@@ -1,6 +1,6 @@
 // Inventario de perfiles gamer
 //  creacion de la base de datos y seleccion de la misma
-use campus_colecciones_gamers
+use ("campus_colecciones_gamers");
 
 // creacion de la coleccion registros
 db.createCollection("registros")
