@@ -3,9 +3,6 @@
 
 use campus_heroes_moba
 
-// Limpiar la colección si existe para garantizar la repetibilidad del script
-db.heroes.drop()
-
 // Crear la colección de forma explícita en minúsculas y plural
 db.createCollection("heroes")
 
