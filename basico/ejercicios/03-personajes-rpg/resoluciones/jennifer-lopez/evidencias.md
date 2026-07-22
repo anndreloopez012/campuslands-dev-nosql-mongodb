@@ -1,9 +1,5 @@
 # Modelo documental
 
-Describe colecciones, documentos, subdocumentos, arrays, referencias e indices sugeridos.
-
-# Modelo documental
-
 Describe colecciones, documentos, subdocumentos, arrays, referencias e índices sugeridos.
 
 ## Contenido de la carpeta
