@@ -1,0 +1,21 @@
+# Inventario de perfiles gamer
+
+## Base de datos
+
+`campus_colecciones_gamers`
+
+## Colección principal
+
+- perfiles
+
+## Decisiones del modelo
+
+Se utilizó una sola colección porque el ejercicio es de nivel básico y toda la información pertenece directamente al perfil del jugador.
+
+Las estadísticas, armas favoritas y configuración fueron almacenadas como subdocumentos y arrays porque normalmente siempre se consultan junto al perfil. Esto reduce lecturas adicionales y simplifica las consultas.
+
+## Archivos
+
+- seed.mongodb.js
+- queries.mongodb.js
+- evidencias.md
